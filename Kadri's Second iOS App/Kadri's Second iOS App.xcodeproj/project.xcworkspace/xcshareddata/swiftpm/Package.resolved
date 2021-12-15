@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "GliaWidgets",
+        "repositoryURL": "https://github.com/salemove/ios-sdk-widgets",
+        "state": {
+          "branch": null,
+          "revision": "b9bbc38e6193036c1aa4d8e7d8f5e61c52f722f1",
+          "version": "0.5.8"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
