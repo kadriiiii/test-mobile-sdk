@@ -14,9 +14,11 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.kadrisfirstandroidapp.databinding.FragmentFirstBinding;
+import com.glia.androidsdk.Engagement;
 import com.glia.androidsdk.Glia;
 import com.glia.androidsdk.queuing.QueueState;
 import com.glia.androidsdk.queuing.Queue;
+import com.glia.androidsdk.Engagement.MediaType;
 
 import com.glia.widgets.GliaWidgets;
 import com.glia.widgets.call.CallActivity;
@@ -63,6 +65,7 @@ public class FirstFragment extends Fragment {
             Optional<Queue> selectedQueue = Arrays.stream(queueArray)
                     .filter(queue -> queue.getId().equals("116c746c-1a62-4883-a80b-01cfb2562c65"))
                     .filter(queue -> queue.getState().getStatus() == QueueState.Status.OPEN)
+                    .filter(queue -> Arrays.asList(queue.getState().getMedias()).contains(Engagement.MediaType.VIDEO))
                     .findFirst();
             if (selectedQueue.isPresent()) {
                 // Use selectedQueue.get().getId() to queue for engagement
