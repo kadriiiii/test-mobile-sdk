@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -16,7 +17,6 @@ import com.example.kadrisfirstandroidapp.databinding.FragmentFirstBinding;
 import com.glia.androidsdk.Glia;
 import com.glia.androidsdk.queuing.QueueState;
 import com.glia.androidsdk.queuing.Queue;
-import android.app.Activity;
 
 import com.glia.widgets.GliaWidgets;
 import com.glia.widgets.call.CallActivity;
@@ -51,6 +51,7 @@ public class FirstFragment extends Fragment {
             }
 
         });
+
 
         // See if there are available queues
 
@@ -103,8 +104,9 @@ public class FirstFragment extends Fragment {
 
 
             } else {
-                runOnUiThread(() -> {
+                getActivity().runOnUiThread(() -> {
                     // Notify visitor that all queues are closed at the moment
+                    view.findViewById(R.id.right_button).setVisibility(View.GONE);
                 });
             }
         });
